@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Debug
 
 class DebugTests: XCTestCase {
     
@@ -23,6 +24,16 @@ class DebugTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         XCTAssert(true, "Pass")
+        let debug = Debugger("notdefined")
+        debug("THIS SHOULD NOT PRINT")
+    }
+    
+    func testExample2() {
+        
+        //DEBUG=debugtest is set in XCode Unit Test settings
+        let debug = Debugger("debugtest")
+        debug("THIS SHOULD BE PRINTED")
+        
     }
     
     func testPerformanceExample() {
